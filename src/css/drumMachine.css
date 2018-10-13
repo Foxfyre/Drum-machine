@@ -1,0 +1,42 @@
+.drumMachine {
+  display: flex;
+  flex-direction: row;
+  width: 800px;
+  height: 400px;
+  margin: 200px auto;
+  padding: 0;
+  border: 3px solid grey;
+  background-color: burlywood;
+  border-radius: 5px;
+}
+
+.drumRow {
+  display: flex;
+  flex-direction: row;
+  background-color: purple;
+  width: 90%;
+  height: 30%;
+  align-items: center;
+  justify-content: space-around;
+  align-content: center;
+  align-self: center;
+  
+}
+
+.drumButtons {
+  display: flex;
+  flex-direction: column;
+  background-color: bisque;
+  width: 400px;
+  height: 360px;
+  margin: 20px 0 0 20px;
+  justify-content: space-between;
+}
+
+#display {
+  width: 200px;
+  height: 50px;
+  background-color: silver;
+  margin: 100px;
+}
+
