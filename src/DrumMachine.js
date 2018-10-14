@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { getSoundName } from "./selectors"
 import Square from "./Square";
 import "./css/drumMachine.css";
 
@@ -7,7 +8,8 @@ class DrumMachine extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      displaySound: "Test"
+      displaySound: "test",
+      soundName: this.soundName
     }
   };
 
@@ -31,15 +33,16 @@ class DrumMachine extends Component {
             <Square value={"C"} id={"heater3"} keyCode={67} url={"https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3"}/>
           </div>
         </div>
-        <div name="display" id="display"> { this.state.displaySound } </div>
+        <div name="display" id="display"> { this.state.soundName } </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  id: state.soundName
-});
+const mapStateToProps = state => {
+  const sound = getSoundName(state);
+  return {soundName: sound};
+};
 
 export default connect(
 mapStateToProps,

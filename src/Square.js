@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import displaySound from "./actions/actions";
+import { displaySound } from "./actions/actions";
 import "./css/squares.css";
 
 class Square extends Component {
@@ -15,13 +15,13 @@ class Square extends Component {
 
   onClick(e) {
     this.myRef.current.play();
-    this.props.DISPLAY_SOUND(this.props.id);
+    this.props.soundName(this.props.id);
   }
 
   handlePress(e) {
     if (e.keyCode === this.props.keyCode) {
       this.myRef.current.play();
-      this.props.DISPLAY_SOUND(this.props.id);
+      this.props.soundName(this.props.id);
     }
   }
 
@@ -43,8 +43,12 @@ class Square extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  DISPLAY_SOUND: soundName => dispatch(displaySound(soundName))
+  soundName: soundName => dispatch(displaySound(soundName))
 });
+
+/*const mapDispatchToProps = dispatch => ({
+  submitNewMessage: username => dispatch(loginUser(username))
+})*/
 
 export default connect(
   null,

@@ -1,7 +1,7 @@
 import { DISPLAY_SOUND } from "../actions/actionTypes";
 
 const initialState = {
-  soundName: ""
+  soundName: "test"
 }
 
 export default function(state = initialState, action) {
@@ -9,8 +9,7 @@ export default function(state = initialState, action) {
     case DISPLAY_SOUND: {
       const displaySound = action.payload;
       return {
-        ...state,
-        name: displaySound.soundName
+        soundName: displaySound.soundName
       }
     }
     default: 
