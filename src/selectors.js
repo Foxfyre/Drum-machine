@@ -1,1 +1,1 @@
-export const getSoundName = store => store.name;
+export const getSoundName = store => store.soundName;

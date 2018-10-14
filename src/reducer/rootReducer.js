@@ -9,6 +9,7 @@ export default function(state = initialState, action) {
     case DISPLAY_SOUND: {
       const displaySound = action.payload;
       return {
+        ...state,
         soundName: displaySound.soundName
       }
     }

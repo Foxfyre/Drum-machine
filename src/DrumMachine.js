@@ -7,10 +7,10 @@ import "./css/drumMachine.css";
 class DrumMachine extends Component {
   constructor(props) {
     super(props);
-    this.state = {
+    /*this.state = {
       displaySound: "test",
       soundName: this.soundName
-    }
+    }*/
   };
 
   render() {
@@ -33,7 +33,7 @@ class DrumMachine extends Component {
             <Square value={"C"} id={"heater3"} keyCode={67} url={"https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3"}/>
           </div>
         </div>
-        <div name="display" id="display"> { this.state.soundName } </div>
+        <div name="display" id="display"> { this.state } </div>
       </div>
     );
   }
@@ -41,7 +41,8 @@ class DrumMachine extends Component {
 
 const mapStateToProps = state => {
   const sound = getSoundName(state);
-  return {soundName: sound};
+  console.log(sound);
+  return { soundName: sound };
 };
 
 export default connect(
