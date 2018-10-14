@@ -33,7 +33,7 @@ class DrumMachine extends Component {
             <Square value={"C"} id={"heater3"} keyCode={67} url={"https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3"}/>
           </div>
         </div>
-        <div name="display" id="display"> { this.state } </div>
+        <div name="display" id="display"> { this.props.soundName } </div>
       </div>
     );
   }
